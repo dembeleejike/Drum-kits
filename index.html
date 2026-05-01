@@ -9,10 +9,9 @@
 
 <body>
 
-  <h1 class="title">🥁 Let’s Have Fun!</h1>
+  <h1 class="title">🥁 Let's Have Fun!</h1>
 
   <div class="drum-container">
-
     <button class="w drum">w</button>
     <button class="a drum">a</button>
     <button class="s drum">s</button>
@@ -20,17 +19,27 @@
     <button class="j drum">j</button>
     <button class="k drum">k</button>
     <button class="i drum">i</button>
-
   </div>
 
 <script>
+
+const sounds = {
+  w: new Audio("sounds/Ton1.wav"),
+  a: new Audio("sounds/Ton2.wav"),
+  s: new Audio("sounds/Ton3.wav"),
+  d: new Audio("sounds/Ton4.wav"),
+  j: new Audio("sounds/snare5.wav"),
+  k: new Audio("sounds/crash6.wav"),
+  i: new Audio("sounds/kick-bass7.wav"),
+};
+
 const buttons = document.querySelectorAll(".drum");
 
 // CLICK
 buttons.forEach(btn => {
   btn.addEventListener("click", function () {
-    playSound(this.innerText);
-    animate(this.innerText);
+    playSound(this.innerText.trim());
+    animate(this.innerText.trim());
   });
 });
 
@@ -40,28 +49,16 @@ document.addEventListener("keydown", function (event) {
   animate(event.key);
 });
 
-
 function playSound(key) {
-  let audio;
-
-  switch (key) {
-    case "w": audio = new Audio("sounds/Ton1.wav"); break;
-    case "a": audio = new Audio("sounds/Ton2.wav"); break;
-    case "s": audio = new Audio("sounds/Ton3.wav"); break;
-    case "d": audio = new Audio("sounds/Ton4.wav"); break;
-    case "j": audio = new Audio("sounds/snare5.wav"); break;
-    case "k": audio = new Audio("sounds/crash6.wav"); break;
-    case "i": audio = new Audio("sounds/kick-bass7.wav"); break;
-  }
-
-  if (audio) audio.play();
+  const audio = sounds[key];
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
 }
-
 
 function animate(key) {
   const active = document.querySelector("." + key);
   if (!active) return;
-
   active.classList.add("pressed");
   setTimeout(() => active.classList.remove("pressed"), 150);
 }
@@ -69,3 +66,4 @@ function animate(key) {
 
 </body>
 </html>
+
