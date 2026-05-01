@@ -140,13 +140,13 @@ body {
 }
 
 /* ── BACKGROUND IMAGES ── */
-.w { background-image: url("/images/Screenshot_20260430-004221_1.jpg"); }
-.a { background-image: url("/images/Screenshot_20260430-003105_1.jpg"); }
-.s { background-image: url("/images/Screenshot_20260430-003159_1.jpg"); }
-.d { background-image: url("/images/Screenshot_20260430-003352_1.jpg"); }
-.j { background-image: url("/images/Screenshot_20260430-003453_1.jpg"); }
-.k { background-image: url("/images/Screenshot_20260430-011833.jpg"); }
-.i { background-image: url("/images/Screenshot_20260430-003541_1.jpg"); }
+.w { background-image: url("images/Screenshot_20260430-004221_1.jpg"); }
+.a { background-image: url("images/Screenshot_20260430-003105_1.jpg"); }
+.s { background-image: url("images/Screenshot_20260430-003159_1.jpg"); }
+.d { background-image: url("images/Screenshot_20260430-003352_1.jpg"); }
+.j { background-image: url("images/Screenshot_20260430-003453_1.jpg"); }
+.k { background-image: url("images/Screenshot_20260430-011833.jpg"); }
+.i { background-image: url("images/Screenshot_20260430-003541_1.jpg"); }
 
 
 /* ══════════════════════════════════════════
